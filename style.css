@@ -1,4 +1,11 @@
-#seleccionar-mascota{
+.mascotas{
     display: flex;
     flex-direction: column;
+    max-width:250px;
+}
+
+.mascota{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
 }
