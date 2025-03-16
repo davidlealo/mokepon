@@ -1,10 +1,10 @@
 function seleccionarMascota(){
     if (hipodoge.checked){
-        alert('Has seleccionado a Hipodoge')
+        spanMascotaJugador.innerHTML = 'Hipodoge'
     } else if (capipepo.checked){
-        alert('Has seleccionado a Capipepo')
-    } else if (capipepo.checked){
-        alert('Has seleccionado a Ratigueya')
+        spanMascotaJugador.innerHTML = 'Capipepo'
+    } else if (ratigueya.checked){
+        spanMascotaJugador.innerHTML = 'Ratigueya'
 } else{
     alert('Debes seleccionar una mascota')
 }}
@@ -12,6 +12,8 @@ function seleccionarMascota(){
 let hipodoge = document.getElementById('hipodoge')
 let capipepo = document.getElementById('capipepo')
 let ratigueya = document.getElementById('ratigueya')
+
+let spanMascotaJugador = document.getElementById('mascota-jugador')
 
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', seleccionarMascota)
