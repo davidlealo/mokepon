@@ -9,6 +9,10 @@ function seleccionarMascota(){
     alert('Debes seleccionar una mascota')
 }}
 
+function aleatorio(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
 let hipodoge = document.getElementById('hipodoge')
 let capipepo = document.getElementById('capipepo')
 let ratigueya = document.getElementById('ratigueya')
@@ -17,3 +21,5 @@ let spanMascotaJugador = document.getElementById('mascota-jugador')
 
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', seleccionarMascota)
+
+
