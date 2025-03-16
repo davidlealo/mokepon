@@ -31,9 +31,42 @@ function seleccionarMascotaEnemigo(){
     }
 }
 
-function ataqueFuego(){}
-function ataqueAgua(){}
-function ataqueTierra(){}
+function ataqueEnemigoAleatorio(){
+    let ataqueAleatorio = aleatorio(1, 3)
+
+    if (ataqueAleatorio === 1){
+        ataqueEnemigo = 'Fuego'
+        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
+    }
+    else if (ataqueAleatorio === 2){
+        ataqueEnemigo = 'Agua'
+        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
+    }
+    else if (ataqueAleatorio === 3){
+        ataqueEnemigo = 'Tierra'
+        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
+    } else{
+        alert('Error al seleccionar el ataque enemigo')
+    }
+}
+
+function ataqueFuego(){
+    ataqueJugador = 'Fuego'
+    alert('Tu ataque es ' + ataqueJugador)
+    ataqueEnemigoAleatorio()
+}
+
+function ataqueAgua(){
+    ataqueJugador = 'Agua'
+    alert('Tu ataque es ' + ataqueJugador)
+    ataqueEnemigoAleatorio()
+}
+
+function ataqueTierra(){
+    ataqueJugador = 'Tierra'
+    alert('Tu ataque es ' + ataqueJugador)
+    ataqueEnemigoAleatorio()
+}
 
 let hipodoge = document.getElementById('hipodoge')
 let capipepo = document.getElementById('capipepo')
@@ -45,8 +78,8 @@ let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 let botonMascota = document.getElementById('boton-mascota')
 botonMascota.addEventListener('click', seleccionarMascota)
 
-let ataqueJugador
-let ataqueEnemigo
+let ataqueJugador = ''
+let ataqueEnemigo = ''
 let botonFuego = document.getElementById('boton-fuego')
 botonFuego.addEventListener('click', ataqueFuego)
 let botonAgua = document.getElementById('boton-agua')
