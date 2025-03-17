@@ -36,43 +36,38 @@ function ataqueEnemigoAleatorio(){
 
     if (ataqueAleatorio === 1){
         ataqueEnemigo = 'Fuego'
-        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
     }
     else if (ataqueAleatorio === 2){
         ataqueEnemigo = 'Agua'
-        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
     }
     else if (ataqueAleatorio === 3){
         ataqueEnemigo = 'Tierra'
-        alert('El ataque de tu enemigo es ' + ataqueEnemigo)
     } else{
         alert('Error al seleccionar el ataque enemigo')
     }
+    crearMensaje()
 }
 
 function ataqueFuego(){
     ataqueJugador = 'Fuego'
-    alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
-    crearMensaje()
 }
 
 function ataqueAgua(){
     ataqueJugador = 'Agua'
-    alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
-    crearMensaje()
 }
 
 function ataqueTierra(){
     ataqueJugador = 'Tierra'
-    alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
-    crearMensaje()
 }
 
 function crearMensaje (){
-
+    let parrafo = document.createElement('p')
+    let mensaje = document.createTextNode('Tu ataque es ' + ataqueJugador + ' y el ataque de tu enemigo es ' + ataqueEnemigo)
+    parrafo.appendChild(mensaje)
+    document.body.appendChild(parrafo)
 }
 
 let hipodoge = document.getElementById('hipodoge')
