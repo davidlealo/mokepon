@@ -103,17 +103,14 @@ function revisarVidas(){
         let resultadoFinal = 'Lamentablemente perdiste el juego 😢'
         mensajeFinal(resultadoFinal)
         detenerJuego()
+        botonReiniciar.style.display = 'block' // Muestra el botón de reinicio
     } else if (vidasEnemigo === 0){
         alert('Ganaste el juego')
         let resultadoFinal = 'Felicitaciones 🥳🎉, ganaste el juego'
         mensajeFinal(resultadoFinal)
         detenerJuego()
+        botonReiniciar.style.display = 'block' // Muestra el botón de reinicio
     }
-}
-
-function mensajeFinal(resultadoFinal){
-    let seleccionarMensajes = document.getElementById('mensajes')
-    seleccionarMensajes.innerHTML = resultadoFinal
 }
 
 function reiniciar(){
@@ -122,20 +119,24 @@ function reiniciar(){
     vidasJugadorDOM.innerHTML = vidasJugador
     vidasEnemigoDOM.innerHTML = vidasEnemigo
 
-    // Borra los mensajes agregados al body
-    let mensajes = document.querySelectorAll('body > p') // Selecciona todos los párrafos agregados dinámicamente
-    mensajes.forEach(mensaje => mensaje.remove()) // Elimina cada párrafo encontrado
+    let mensajes = document.querySelectorAll('body > p')
+    mensajes.forEach(mensaje => mensaje.remove())
 
-    // Borra el mensaje final
     let seleccionarMensajes = document.getElementById('mensajes')
     if (seleccionarMensajes) {
         seleccionarMensajes.innerHTML = ''
     }
 
-    // Reactiva los botones
     botonFuego.disabled = false
     botonAgua.disabled = false 
     botonTierra.disabled = false
+
+    botonReiniciar.style.display = 'none' // Oculta el botón de reinicio nuevamente
+}
+
+function mensajeFinal(resultadoFinal){
+    let seleccionarMensajes = document.getElementById('mensajes')
+    seleccionarMensajes.innerHTML = resultadoFinal
 }
 
 
