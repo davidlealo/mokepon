@@ -68,13 +68,21 @@ function combate (){
         resultado = 'Empate'
     } else if (ataqueEnemigo == 'Fuego' && ataqueJugador == 'Tierra'){
         resultado = 'Ganaste'
+        vidasEnemigo--
+        vidasEnemigoDOM.innerHTML = vidasEnemigo
     } else if (ataqueEnemigo == 'Agua' && ataqueJugador == 'Fuego'){
         resultado = 'Ganaste'
+        vidasEnemigo--
+        vidasEnemigoDOM.innerHTML = vidasEnemigo
     } else if (ataqueEnemigo == 'Tierra' && ataqueJugador == 'Agua'){
         resultado = 'Ganaste'
+        vidasEnemigo--
+        vidasEnemigoDOM.innerHTML = vidasEnemigo
     }
     else{
         resultado = 'Perdiste'
+        vidasJugador--
+        vidasJugadorDOM.innerHTML = vidasJugador
     }
     crearMensaje()
     return resultado
@@ -86,6 +94,7 @@ function crearMensaje (){
     parrafo.appendChild(mensaje)
     document.body.appendChild(parrafo)
 }
+
 
 let hipodoge = document.getElementById('hipodoge')
 let capipepo = document.getElementById('capipepo')
@@ -99,9 +108,13 @@ botonMascota.addEventListener('click', seleccionarMascota)
 
 let ataqueJugador = ''
 let ataqueEnemigo = ''
+let vidasJugador = 3
+let vidasEnemigo = 3
 let botonFuego = document.getElementById('boton-fuego')
 botonFuego.addEventListener('click', ataqueFuego)
 let botonAgua = document.getElementById('boton-agua')
 botonAgua.addEventListener('click', ataqueAgua)
 let botonTierra = document.getElementById('boton-tierra')
 botonTierra.addEventListener('click', ataqueTierra)
+let vidasEnemigoDOM = document.getElementById('vidas-enemigo')
+let vidasJugadorDOM = document.getElementById('vidas-jugador')
