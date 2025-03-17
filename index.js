@@ -102,10 +102,12 @@ function revisarVidas(){
         alert('Perdiste el juego')
         let resultadoFinal = 'Lamentablemente perdiste el juego 😢'
         mensajeFinal(resultadoFinal)
+        detenerJuego()
     } else if (vidasEnemigo === 0){
         alert('Ganaste el juego')
         let resultadoFinal = 'Felicitaciones 🥳🎉, ganaste el juego'
         mensajeFinal(resultadoFinal)
+        detenerJuego()
     }
 }
 
@@ -114,6 +116,34 @@ function mensajeFinal(resultadoFinal){
     seleccionarMensajes.innerHTML = resultadoFinal
 }
 
+function reiniciar(){
+    vidasJugador = 3
+    vidasEnemigo = 3
+    vidasJugadorDOM.innerHTML = vidasJugador
+    vidasEnemigoDOM.innerHTML = vidasEnemigo
+
+    // Borra los mensajes agregados al body
+    let mensajes = document.querySelectorAll('body > p') // Selecciona todos los párrafos agregados dinámicamente
+    mensajes.forEach(mensaje => mensaje.remove()) // Elimina cada párrafo encontrado
+
+    // Borra el mensaje final
+    let seleccionarMensajes = document.getElementById('mensajes')
+    if (seleccionarMensajes) {
+        seleccionarMensajes.innerHTML = ''
+    }
+
+    // Reactiva los botones
+    botonFuego.disabled = false
+    botonAgua.disabled = false 
+    botonTierra.disabled = false
+}
+
+
+function detenerJuego(){
+    botonFuego.disabled = true
+    botonAgua.disabled = true
+    botonTierra.disabled = true
+}
 
 let hipodoge = document.getElementById('hipodoge')
 let capipepo = document.getElementById('capipepo')
@@ -137,3 +167,5 @@ let botonTierra = document.getElementById('boton-tierra')
 botonTierra.addEventListener('click', ataqueTierra)
 let vidasEnemigoDOM = document.getElementById('vidas-enemigo')
 let vidasJugadorDOM = document.getElementById('vidas-jugador')
+let botonReiniciar = document.getElementById('boton-reiniciar')
+botonReiniciar.addEventListener('click', reiniciar)
