@@ -54,18 +54,25 @@ function ataqueFuego(){
     ataqueJugador = 'Fuego'
     alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
+    crearMensaje()
 }
 
 function ataqueAgua(){
     ataqueJugador = 'Agua'
     alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
+    crearMensaje()
 }
 
 function ataqueTierra(){
     ataqueJugador = 'Tierra'
     alert('Tu ataque es ' + ataqueJugador)
     ataqueEnemigoAleatorio()
+    crearMensaje()
+}
+
+function crearMensaje (){
+
 }
 
 let hipodoge = document.getElementById('hipodoge')
