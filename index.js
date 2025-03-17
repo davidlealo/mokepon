@@ -85,6 +85,7 @@ function combate (){
         vidasJugadorDOM.innerHTML = vidasJugador
     }
     crearMensaje()
+    revisarVidas()
     return resultado
 }
 
@@ -93,7 +94,7 @@ function crearMensaje (){
     let mensaje = document.createTextNode('Tu ataque es ' + ataqueJugador + ' y el ataque de tu enemigo es ' + ataqueEnemigo + '. El resultado es ' + resultado)
     parrafo.appendChild(mensaje)
     document.body.appendChild(parrafo)
-    revisarVidas()
+    
 }
 
 function revisarVidas(){
