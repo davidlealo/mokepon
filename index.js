@@ -45,7 +45,7 @@ function ataqueEnemigoAleatorio(){
     } else{
         alert('Error al seleccionar el ataque enemigo')
     }
-    crearMensaje()
+    combate()
 }
 
 function ataqueFuego(){
@@ -63,9 +63,26 @@ function ataqueTierra(){
     ataqueEnemigoAleatorio()
 }
 
+function combate (){
+    if (ataqueEnemigo == ataqueJugador) {
+        resultado = 'Empate'
+    } else if (ataqueEnemigo == 'Fuego' && ataqueJugador == 'Tierra'){
+        resultado = 'Ganaste'
+    } else if (ataqueEnemigo == 'Agua' && ataqueJugador == 'Fuego'){
+        resultado = 'Ganaste'
+    } else if (ataqueEnemigo == 'Tierra' && ataqueJugador == 'Agua'){
+        resultado = 'Ganaste'
+    }
+    else{
+        resultado = 'Perdiste'
+    }
+    crearMensaje()
+    return resultado
+}
+
 function crearMensaje (){
     let parrafo = document.createElement('p')
-    let mensaje = document.createTextNode('Tu ataque es ' + ataqueJugador + ' y el ataque de tu enemigo es ' + ataqueEnemigo)
+    let mensaje = document.createTextNode('Tu ataque es ' + ataqueJugador + ' y el ataque de tu enemigo es ' + ataqueEnemigo + '. El resultado es ' + resultado)
     parrafo.appendChild(mensaje)
     document.body.appendChild(parrafo)
 }
