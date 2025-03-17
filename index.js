@@ -93,6 +93,15 @@ function crearMensaje (){
     let mensaje = document.createTextNode('Tu ataque es ' + ataqueJugador + ' y el ataque de tu enemigo es ' + ataqueEnemigo + '. El resultado es ' + resultado)
     parrafo.appendChild(mensaje)
     document.body.appendChild(parrafo)
+    revisarVidas()
+}
+
+function revisarVidas(){
+    if (vidasJugador === 0){
+        alert('Perdiste el juego')
+    } else if (vidasEnemigo === 0){
+        alert('Ganaste el juego')
+    }
 }
 
 
