@@ -5,9 +5,14 @@ function seleccionarMascota(){
         spanMascotaJugador.innerHTML = 'Capipepo'
     } else if (ratigueya.checked){
         spanMascotaJugador.innerHTML = 'Ratigueya'
-} else{
-    alert('Debes seleccionar una mascota')
-}
+    } else {
+        alert('Debes seleccionar una mascota')
+        return
+    }
+
+    // Ocultar la sección de selección de mascota
+    document.getElementById('seleccionar-mascota').style.display = 'none';
+
     seleccionarMascotaEnemigo()
 }
 
@@ -131,7 +136,11 @@ function reiniciar(){
     botonAgua.disabled = false 
     botonTierra.disabled = false
 
-    botonReiniciar.style.display = 'none' // Oculta el botón de reinicio nuevamente
+    // Mostrar la sección de selección de mascota nuevamente
+    document.getElementById('seleccionar-mascota').style.display = 'block';
+
+    // Ocultar el botón de reinicio nuevamente
+    botonReiniciar.style.display = 'none'
 }
 
 function mensajeFinal(resultadoFinal){
