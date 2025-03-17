@@ -100,9 +100,19 @@ function crearMensaje (){
 function revisarVidas(){
     if (vidasJugador === 0){
         alert('Perdiste el juego')
+        resultadoFinal = 'Lamentablemente perdiste el juego 😢'
     } else if (vidasEnemigo === 0){
         alert('Ganaste el juego')
+        resultadoFinal = 'Felicitaciones 🥳🎉, ganaste el juego'
     }
+    return resultadoFinal
+}
+
+function mensajeFinal(resultadoFinal){
+    let seleccionarMensajes = document.createElementById('mensajes')
+    let parrafo = document.createElement('p')
+    let mensaje = document.createTextNode(resultadoFinal)
+    parrafo.appendChild(mensaje)
 }
 
 
